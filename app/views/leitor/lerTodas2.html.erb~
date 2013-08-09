@@ -1,0 +1,48 @@
+<%
+
+def merge(msg)
+
+array = msg.split
+msg = ""
+array.each do |nome|
+if nome.include? "@"
+
+else 
+if nome.include?"t.co/"
+
+else
+msg = msg + " " + nome
+end
+end
+
+end
+msg = msg.gsub("Av.","Avenida")
+msg = msg.gsub("JCTransito said","")
+msg = msg.gsub("_","")
+msg = msg.gsub("(Via","")
+msg = msg.gsub("(via","")
+msg = msg.gsub("http://","")
+msg = msg.gsub("-"," ")
+msg = msg[0,100]
+
+end  
+if session[:user] == nil
+	session[:user] = 0;
+else
+	session[:user] = session[:user] + 1;
+end
+
+contador = 0
+@msgs.each do |mensagem| 
+
+%>
+<h4><%= merge(mensagem) %></h4>
+
+<% if contador == session[:user] %>
+	<iframe src="https://dl.dropboxusercontent.com/u/9106367/tootip.html?<%= merge(mensagem) %>" style="visibility:hidden;display:none"></iframe>
+<% 
+   end 
+   contador = contador +1
+   end 
+%>
+

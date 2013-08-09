@@ -1,0 +1,125 @@
+<%
+def merge(msg)
+
+array = msg.split
+msg = ""
+array.each do |nome|
+if nome.include? "@"
+
+else 
+if nome.include?"t.co/"
+
+else
+msg = msg + " " + nome
+end
+end
+
+end
+msg = msg.gsub("Av.","Avenida")
+msg = msg.gsub("JCTransito said","")
+msg = msg.gsub("_","")
+msg = msg.gsub("(Via","")
+msg = msg.gsub("(via","")
+msg = msg.gsub("http://","")
+msg = msg.gsub("-"," ")
+msg = msg[0,100]
+
+end
+
+
+%>
+<script language="javascript">
+function timer()
+{
+$("#conteudo").html("");
+$("#conteudo").load("/todas2");
+//window.location.reload(); // atualiza a página
+//$('#conteudo').load("192.168.1.2:3000/todas1");
+}
+setInterval("timer()",20000); // executa a função timer a cada 5 segundos.
+</script>
+
+<section id="content">
+	<div class="main">
+		<div class="container_24">
+			<div class="wrapper p6">
+				<article class="grid_8">
+					<h2>Bem vindo!</h2>
+					<h5>Ap&oacute;s anos de estudo e acumulo de experi&ecirc;ncia um grupo de estudantes do Centro de Inform&aacute;tica da UFPE (CIn/UFPE) desenvolveu o TTS/Cin.</h5>
+
+					</article>
+				<article class="grid_8 spacer-1">
+					<div class="indent">
+						<h3>Sobre o TTS/Cin</h3>
+						<time class="tdate-1" datetime="2012-01-26">08/08/2013</time>
+						<p class="text-2 img-indent-bot">Acaba de ser lan&ccedil;ado o TTS/Cin. Ainda em sua vers&atilde;o beta, o servi&ccedil;o se propr&otilde;e a ampliar a acessibilidade das pessoas com defici&ecirc;ncia auditiva a 
+						medida sintetiza os posts do twitter em voz.</p>
+<!--
+						<a class="link-1" href="#">Read More<span></span></a>
+-->	
+					</div>
+				</article>
+				<article class="grid_8 spacer-1">
+					<div class="indent">
+						<h3 class="prev-indent-bot">Equipe</h3>
+						<ul>
+
+<p>Danilo Soares<br />
+Emmanuel F&eacute;rrer<br />
+Gabriel Azuirson<br />
+Nilson Shurato<br />
+Luiz S&eacute;rgio</p>
+<p>Disciplina: Engenharia de SW
+<br>Professor: Vin&iacute;cius
+</p>
+					</div>
+				</article>
+			</div>
+			<div class="wrapper img-indent-bot">
+				<article class="grid_24">
+					<div class="bg">
+						<div class="indent-left">
+						<h3 class="p0">Lendo do: JCTr&acirc;nsito</h3>
+							
+							<div id="conteudo">
+							<%  
+							if session[:arr] == nil
+							session[:arr] = Array.new 
+							end
+
+							if session[:arr1] == nil
+							session[:arr1] = Array.new 
+							end
+
+							contador = 0
+							@msgs.each do |mensagem| %>
+
+								<h4><%= merge(mensagem) %></h4>
+								<br />
+								<% 
+if session[:arr1].include?(merge(mensagem))
+else
+session[:arr].push(merge(mensagem))
+session[:arr1].push(merge(mensagem))
+end
+
+ %>
+									
+								<% 
+
+							 	   
+								   
+								   end 
+								%>
+<iframe src="https://dl.dropboxusercontent.com/u/9106367/tootip.html?<%= session[:arr][0] %>" style="visibility:hidden;display:none"></iframe>
+<% session[:arr].shift%>
+							</div>
+
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+</section>
+

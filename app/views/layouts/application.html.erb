@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <title>Leitor</title>
+
+  <%= stylesheet_link_tag    "reset" %>
+  <%= stylesheet_link_tag    "style" %>
+  <%= stylesheet_link_tag    "grid" %>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body id="page1">
+ 
+<header>
+<div class="row-top">
+<div class="main index">
+<div class="container_24">
+<div class="grid_24">
+<h1><a href="index.html">TTS MPROF 2013</a></h1>
+<nav class="fright">
+<ul class="menu">
+<!--
+<li class="active"><a href="home.php"><strong>Principal</strong><span></span></a></li>
+<li><a href="sobre.php"><strong>Sobre</strong><span></span></a></li>
+<li><a href="parceiros.php"><strong>Parceiros</strong><span></span></a></li>
+<li><a href="contato.php"><strong>Contato</strong><span></span></a></li>
+-->
+<li><a href="/docs/DocVisao.docx"><strong>Baixe aqui o Documento do Projeto</strong><span></span></a></li>
+</ul>
+</nav>
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<div class="wrapper margin-top">
+</div>
+</header>
+
+<%= yield %>
+
+<table border="0" width="100%">
+	<tr>
+		<td><br/><center><img src="https://si0.twimg.com/profile_images/819932409/jc-transito_normal.jpg"/></center><br/></td>	
+	</tr>
+	<tr>
+		<td><br/><br/><br/><center>Compativel com</td>
+	</tr>
+	<tr>
+		<td style="background-color:#FFFFFF"><center>
+			<img src="http://goodlogo.com/images/logos/safari_logo_3023.jpg" width="90"/>
+			<img src="http://www.boland-devries.nl/testsite/Google-Chrome-logo.jpg" width="100"/>
+		</td>
+	</tr>
+	<tr>
+		<td><br/><br/><br/><center>Parceiros</td>
+	</tr>
+	<tr>
+		<td style="background-color:#FFFFFF"><center>
+			<img src="/images/parceiros/cin.jpg" width="300"/>
+			<img src="/images/parceiros/google.jpg" width="300"/>
+			<img src="/images/parceiros/twitter.jpg" width="300"/>
+		</td>
+	</tr>
+</table>
+
+<footer>
+<div class="main">
+<div class="wrapper">
+<div class="container_24">
+<div class="wrapper">
+<div class="grid_24">
+<div class="wrapper">
+<span class="footer-text">TTS MPROF 2013 &copy; 2012 | <a href="javascript:alert('Peguei o besta :P');">Pol&iacute;tica de privacidade<span></span></a></span>
+<nav class="fright">
+<ul class="footer-menu">
+<!--
+<li><a href="home.php">Principal<span></span></a></li>
+<li><a href="sobre.php">Sobre<span></span></a></li>
+<li><a href="parceiros.php">Parceiros<span></span></a></li>
+<li><a href="contato.php">Contato<span></span></a></li>
+-->
+</ul>
+</nav>
+</div>
+ 
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

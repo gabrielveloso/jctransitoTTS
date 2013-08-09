@@ -1,0 +1,60 @@
+﻿
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="src/google-tts.js"></script>
+<script type="text/javascript" src="soundmanager2.js"></script>
+<script type="text/javascript">
+    
+function replaceAll(string, token, newtoken) {
+	while (string.indexOf(token) != -1) {
+ 		string = string.replace(token, newtoken);
+	}
+	return string;
+}
+
+
+$(document).ready(function(){
+      soundManager.setup({
+        url: '/',
+        preferFlash: false,
+        onready: function() {
+          if (!window.GoogleTTS) {
+            $("#error").text("Sorry, the google-tts script couldn't be loaded.");
+            return;
+          } 
+
+          
+var loc = window.location.search.substr(1).split('?');
+var n=replaceAll(loc,"msg=","");
+//alert(n);
+
+googleTTS = new window.GoogleTTS();
+
+            
+
+
+
+            googleTTS.play(n, "pt", function(err) { 
+              if (err) {
+                $("#error").text(err.toString());
+              }
+
+              console.log('Finished playing');
+            });
+
+
+         
+        }
+      });
+    });
+</script>
+
+
+</body>
+</html>
