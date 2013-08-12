@@ -28,7 +28,7 @@
 <li><a href="parceiros.php"><strong>Parceiros</strong><span></span></a></li>
 <li><a href="contato.php"><strong>Contato</strong><span></span></a></li>
 -->
-<li><a href="#"><strong>Baixe aqui o Documento do Projeto</strong><span></span></a></li>
+<li><a href="/docs/documentacao.zip"><strong>Baixe aqui o Documento do Projeto</strong><span></span></a></li>
 </ul>
 </nav>
 <div class="clear"></div>
@@ -75,7 +75,7 @@
 <div class="wrapper">
 <div class="grid_24">
 <div class="wrapper">
-<span class="footer-text">TTS MPROF 2013 &copy; 2012 | <a href="javascript:alert('Peguei o besta :P');">Pol&iacute;tica de privacidade<span></span></a></span>
+<span class="footer-text">TTS MPROF 2013 &copy; 2012 | Pol&iacute;tica de privacidade<span></span></span>
 <nav class="fright">
 <ul class="footer-menu">
 <!--

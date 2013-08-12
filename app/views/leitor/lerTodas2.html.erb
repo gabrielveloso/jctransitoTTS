@@ -23,26 +23,37 @@ msg = msg.gsub("(Via","")
 msg = msg.gsub("(via","")
 msg = msg.gsub("http://","")
 msg = msg.gsub("-"," ")
+msg = msg.gsub("sent.","sentido ")
+
 msg = msg[0,100]
 
 end  
-if session[:user] == nil
-	session[:user] = 0;
-else
-	session[:user] = session[:user] + 1;
-end
+if session[:arr] == nil
+							session[:arr] = Array.new 
+							end
+
+							if session[:arr1] == nil
+							session[:arr1] = Array.new 
+							end
 
 contador = 0
 @msgs.each do |mensagem| 
 
 %>
 <h4><%= merge(mensagem) %></h4>
+								<% 
+if session[:arr1].include?(merge(mensagem))
+else
+session[:arr].push(merge(mensagem))
+session[:arr1].push(merge(mensagem))
+end
+
+ %>
 <br />
-<% if contador == session[:user] %>
-	<iframe src="https://dl.dropboxusercontent.com/u/9106367/tootip.html?<%= merge(mensagem) %>" style="visibility:hidden;display:none"></iframe>
-<% 
-   end 
-   contador = contador +1
+<%
+
    end 
 %>
+<iframe src="https://dl.dropboxusercontent.com/u/9106367/tootip.html?<%= session[:arr][0] %>" style="visibility:hidden;display:none"></iframe>
+<% session[:arr].shift%>
 
